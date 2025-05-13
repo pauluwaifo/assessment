@@ -76,7 +76,7 @@ const Home = () => {
 <div className="flex-row flex flex-wrap">
     {data.skills.info.map((skill, index) => (
 
-    <div className="basis-1/2 p-2">
+    <div key={index}    className="basis-1/2 p-2">
     <h5 className='text-xl font-bold text-left mb-5'>{skill.name}</h5>
     <p className='text-left mb-5'>{skill.description}</p>
     </div>
