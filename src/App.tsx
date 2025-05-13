@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import Test from './components/Test'
+import Home from './home.tsx'
+import NavBar from './components/navBar.tsx'
 function App() {
 
   return (
+    <>
+    <NavBar />
    <Routes>
-    <Route path='/' element={<Test />} />
+    <Route path='/' element={<Home />} />
    </Routes>
+    </>
   )
 }
 
