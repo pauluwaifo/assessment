@@ -1,12 +1,19 @@
 const Home = () => {
     const data = {
         "name": "Paul uwaifo",
+        "img": "/imgport.png",
         "about": "Resourceful and solutions driven IT Professional and Front-End Developer with a B.Sc. in Computer Science and over 3 years of hands-on experience in both infrastructure support and modern web development. Proven ability to build responsive, accessible web applications using React.js, Next.js, and TypeScript, alongside solid expertise in IT infrastructure, network administration, and system implementation. Strong communicator and collaborator with a passion for solving complex problems, optimizing performance, and delivering user-focused digital solution",
 
         "Hobbies & Interests": "football and music",
         "skills": {
 
             "info": [
+                {
+                    "name": "React JS",
+                    "description": "I am proficient in React Js, with a strong understanding of its core concepts and features. I have experience in building interactive web applications using React.js and Next.js.",
+                    "level": "Intermediate",
+                    "years_of_experience": 3,
+                },
                 {
                     "name": "javascript",
                     "description": "I am proficient in JavaScript, with a strong understanding of its core concepts and features. I have experience in building interactive web applications using JavaScript frameworks such as React.js and Next.js.",
@@ -16,6 +23,12 @@ const Home = () => {
                 {
                     "name": "css",
                     "description": "I have a solid understanding of CSS and its features, including Flexbox and Grid. I can create responsive designs that work well on various devices and screen sizes.",
+                    "level": "Intermediate",
+                    "years_of_experience": 3,
+                },
+                {
+                    "name": "Tailwind",
+                    "description": "I have a solid understanding of Tailwind and its features, including Flexbox and Grid. I can create responsive designs that work well on various devices and screen sizes.",
                     "level": "Intermediate",
                     "years_of_experience": 3,
                 }
@@ -37,7 +50,7 @@ const Home = () => {
     <div className="basis-1/2 flex items-center justify-center">
 
     <div className='w-[200px] h-[200px] rounded-full bg-grey-200 shadow-xl flex justify-center items-center border-10 border-gray-200'>
-    <img src="/images/paul.jpg" alt="Paul" className="rounded-full w-1/2 h-1/2" />
+    <img src={data.img} alt="Paul" className="rounded-full" />
 
     </div>
 
@@ -60,25 +73,15 @@ const Home = () => {
 
   <h5 className='text-2xl font-bold mb-5 text-left'>WHAT I DO</h5>
 
-<div className="flex-row flex">
-    <div className="basis-1/2">
-    <h5 className='text-xl font-bold text-left mb-5'>Javascript</h5>
-    <p className='text-left mb-5'>I am proficient in JavaScript, with a strong understanding of its core concepts and features. I have experience in building interactive web applications using JavaScript frameworks such as React.js and Next.js.</p>
+<div className="flex-row flex flex-wrap">
+    {data.skills.info.map((skill, index) => (
+
+    <div className="basis-1/2 p-2">
+    <h5 className='text-xl font-bold text-left mb-5'>{skill.name}</h5>
+    <p className='text-left mb-5'>{skill.description}</p>
     </div>
-    <div className="basis-1/2">
-    <h5 className='text-xl font-bold text-left mb-5'>Javascript</h5>
-    <p className='text-left mb-5'>I am proficient in JavaScript, with a strong understanding of its core concepts and features. I have experience in building interactive web applications using JavaScript frameworks such as React.js and Next.js.</p>
-    </div>
-</div>
-<div className="flex-row flex mt-10">
-    <div className="basis-1/2">
-    <h5 className='text-xl font-bold text-left mb-5'>Javascript</h5>
-    <p className='text-left mb-5'>I am proficient in JavaScript, with a strong understanding of its core concepts and features. I have experience in building interactive web applications using JavaScript frameworks such as React.js and Next.js.</p>
-    </div>
-    <div className="basis-1/2">
-    <h5 className='text-xl font-bold text-left mb-5'>Javascript</h5>
-    <p className='text-left mb-5'>I am proficient in JavaScript, with a strong understanding of its core concepts and features. I have experience in building interactive web applications using JavaScript frameworks such as React.js and Next.js.</p>
-    </div>
+    ))}
+    
 </div>
 
 </div>
